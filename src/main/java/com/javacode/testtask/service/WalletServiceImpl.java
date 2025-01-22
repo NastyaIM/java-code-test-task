@@ -26,7 +26,7 @@ public class WalletServiceImpl implements WalletService {
 
 
     @Override
-    public WalletDtoResponse create(OperationDto operationDto) {
+    public WalletDtoResponse changeBalance(OperationDto operationDto) {
         Wallet wallet = walletRepository.findById(operationDto.getWalletId())
                 .orElseThrow(() -> new NotFoundException("Кошелька не существует"));
         changeBalance(operationDto, wallet);
@@ -37,7 +37,7 @@ public class WalletServiceImpl implements WalletService {
     }
 
     @Override
-    public WalletDtoResponse get(UUID walletId) {
+    public WalletDtoResponse getById(UUID walletId) {
         return walletMapper.toWalletDtoResponse(walletRepository.findById(walletId)
                 .orElseThrow(() -> new NotFoundException("Кошелька не существует")));
     }

@@ -19,12 +19,12 @@ public class WalletController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public WalletDtoResponse create(@Valid @RequestBody OperationDto operationDto) {
-        return walletService.create(operationDto);
+    public WalletDtoResponse changeBalance(@Valid @RequestBody OperationDto operationDto) {
+        return walletService.changeBalance(operationDto);
     }
 
     @GetMapping("/{walletId}")
-    public WalletDtoResponse get(@PathVariable UUID walletId) {
-        return null;
+    public WalletDtoResponse getById(@PathVariable UUID walletId) {
+        return walletService.getById(walletId);
     }
 }

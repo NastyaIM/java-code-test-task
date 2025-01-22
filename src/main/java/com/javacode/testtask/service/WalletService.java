@@ -6,6 +6,6 @@ import com.javacode.testtask.dto.WalletDtoResponse;
 import java.util.UUID;
 
 public interface WalletService {
-    WalletDtoResponse create(OperationDto operationDto);
-    WalletDtoResponse get(UUID walletId);
+    WalletDtoResponse changeBalance(OperationDto operationDto);
+    WalletDtoResponse getById(UUID walletId);
 }
