@@ -1,7 +1,8 @@
-package com.javacode.testtask;
+package com.javacode.testtask.dto;
 
 import com.javacode.testtask.model.OperationType;
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,8 +14,8 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class WalletDto {
-    private UUID walletId;
-    private OperationType operationType;
-    private long amount;
+public class WalletDtoResponse {
+    private UUID id;
+    @PositiveOrZero
+    private long balance;
 }

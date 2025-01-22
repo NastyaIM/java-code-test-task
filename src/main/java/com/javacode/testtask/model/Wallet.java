@@ -1,9 +1,6 @@
 package com.javacode.testtask.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,10 +16,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Wallet {
     @Id
-    @Column(name = "wallet_id", nullable = false, unique = true)
-    private UUID walletId;
-    @Column(name = "operationType", nullable = false)
-    private OperationType operationType;
-    @Column(name = "amount", nullable = false)
-    private Long amount;
+    @Column(name = "id", nullable = false, unique = true)
+    private UUID id;
+    @Column(name = "balance", nullable = false)
+    private Long balance;
 }

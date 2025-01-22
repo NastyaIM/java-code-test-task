@@ -1,4 +1,4 @@
-package com.javacode.testtask;
+package com.javacode.testtask.repository;
 
 import com.javacode.testtask.model.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;

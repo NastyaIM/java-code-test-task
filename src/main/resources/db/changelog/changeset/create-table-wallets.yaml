@@ -3,20 +3,39 @@ databaseChangeLog:
       id: 1
       author: NM
       changes:
-        - sql: "CREATE TYPE operation_enum AS ENUM ('DEPOSIT', 'WITHDRAW');"
         - createTable:
             tableName: wallets
             columns:
               - column:
-                  name: wallet_id
-                  type: uuid
+                  name: id
+                  type: UUID
                   constraints:
                     primaryKey: true
                     nullable: false
                     unique: true
               - column:
+                  name: balance
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: operations
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: wallet_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
                   name: operation_type
-                  type: operation_enum
+                  type: varchar(25)
                   constraints:
                     nullable: false
               - column:
@@ -24,3 +43,10 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
+
+        - addAutoIncrement:
+            tableName: operations
+            columnName: id
+            generationType: IDENTITY
+            incrementBy: 1
+
