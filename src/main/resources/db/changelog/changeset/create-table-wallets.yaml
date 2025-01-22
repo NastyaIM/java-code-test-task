@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: NM
+      changes:
+        - sql: "CREATE TYPE operation_enum AS ENUM ('DEPOSIT', 'WITHDRAW');"
+        - createTable:
+            tableName: wallets
+            columns:
+              - column:
+                  name: wallet_id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: operation_type
+                  type: operation_enum
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: bigint
+                  constraints:
+                    nullable: false
