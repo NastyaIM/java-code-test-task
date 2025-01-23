@@ -5,7 +5,5 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface WalletMapper {
-//    //WalletDto toWalletDto(Wallet wallet);
-//    Wallet toWallet( operationDto);
     WalletDtoResponse toWalletDtoResponse(Wallet wallet);
 }

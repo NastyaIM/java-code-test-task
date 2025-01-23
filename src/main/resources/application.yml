@@ -3,6 +3,9 @@ spring:
     name: testtask
   liquibase:
     enabled: true
+    drop-first: false
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: public
   jpa:
     hibernate:
       ddl-auto: none
@@ -16,8 +19,9 @@ spring:
       mode: always
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/test-task
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://${SPRING_DATASOURCE_URL:localhost:5432/test-task}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+
 server:
   port: 8080
