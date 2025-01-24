@@ -11,6 +11,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class OperationDto {
     @NotNull
     private UUID walletId;
