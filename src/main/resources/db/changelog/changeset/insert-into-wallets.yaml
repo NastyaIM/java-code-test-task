@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: NM
+      changes:
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: '1d2149bf-4193-4656-8ea9-cbf8f55f6ff1'
+              - column:
+                  name: balance
+                  value: '1000'
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: '581c5ad3-b6fe-4980-b6fd-4d642aae5712'
+              - column:
+                  name: balance
+                  value: '0'
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: '6269148b-ada9-4402-b578-e1a575075efc'
+              - column:
+                  name: balance
+                  value: '1298390'
+
